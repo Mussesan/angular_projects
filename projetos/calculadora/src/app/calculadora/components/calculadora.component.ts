@@ -8,10 +8,10 @@ import { CalculadoraService } from '../services';
 })
 export class CalculadoraComponent implements OnInit {
 
-  private numero1: string;
-  private numero2: string;
-  private resultado: number;
-  private operacao: string;
+  numero1: string;
+  numero2: string;
+  resultado: number;
+  operacao: string;
 
   constructor (private CalculadoraService: CalculadoraService) { }
   
@@ -110,14 +110,17 @@ export class CalculadoraComponent implements OnInit {
    * 
    * @return string
    */
-  display(): string {
+  get display(): string {
     if (this.resultado !== null) {
+      console.log('resultado')
       return this.resultado.toString();
+      
     }
     if (this.numero2 !== null) {
-      return this.numero1;
+      console.log('numero 2')
+      return this.numero2;
     }
-
+    console.log('numero 1')
     return this.numero1;
   }
 }
