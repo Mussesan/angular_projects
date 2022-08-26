@@ -1,0 +1,33 @@
+<h1>Make a Promise</h1>
+
+<div class="well">
+    <form #formTask="ngForm">
+        <div class="form-group">
+            <label for="nome">Description:</label>
+            <input 
+            type="text" 
+            class="form-control" 
+            id="nome" 
+            name="nome"
+            minlength="5" 
+            required
+            [(ngModel)]="task.name"
+            #nome
+            >
+            <div class="alert alert-danger">
+                <div>
+                    Write here, some task.
+                </div>
+                <div>
+                    The task must have a minimum 5 words.
+                </div>
+            </div>
+        </div>
+        <div class="form-group text-center">
+            <input type="submit" class="btn btn-success" value="Submit" >
+            <a class="btn btn-default" [routerLink]="['/tasks/list-task']">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Back
+            </a>
+        </div>
+    </form>
+</div>

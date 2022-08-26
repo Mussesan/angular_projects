@@ -1,16 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { TaskService } from './shared';
-import { RouterModule } from '@angular/router';
+import { ListTaskComponent } from './list-task/list-task.component';
+import { AddTaskComponent } from './add-task/add-task.component';
 
 @NgModule({
-  declarations: [],
   imports: [
     CommonModule,
-    TaskService,
-    RouterModule
+    RouterModule,
+    FormsModule,
   ],
-  providers: []
+  declarations: [
+    ListTaskComponent,
+    AddTaskComponent,
+  ],
+  providers: [TaskService]
 })
 export class TasksModule { }
