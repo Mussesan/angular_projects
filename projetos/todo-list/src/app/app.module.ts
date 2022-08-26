@@ -13,7 +13,6 @@ import { TasksModule } from './tasks';
     BrowserModule,
     AppRoutingModule,
     TasksModule
-    
   ],
   providers: [],
   bootstrap: [AppComponent]

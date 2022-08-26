@@ -46,6 +46,7 @@ export class CalculadoraService {
 
       default:
         resultado = 0;
+      break;
     } 
     return resultado;//este é o retorno após operação escolhida pelo usuário
   }
