@@ -23,7 +23,9 @@ export class AddTaskComponent implements OnInit {
   }
 
   add(): void {
-    if (this.formTask.form.valid) {
+    if (!this.formTask.form.valid) {
+      window.alert("Hello world!");
+    } else {
       this.taskService.addTask(this.task);
       this.router.navigate(["/tasks"]);
     }

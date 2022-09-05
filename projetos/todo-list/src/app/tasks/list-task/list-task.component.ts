@@ -16,14 +16,11 @@ export class ListTaskComponent implements OnInit {
   ngOnInit(): void {
     this.tasks = this.listAll();
     this.tasks = [
-      new Task(1, "Tarefa 1 - Lavar a louça", true),
-      new Task(2, "Tarefa 2 - Passear com dog", true),
-      new Task(3, "Tarefa 3 - Colocar lixo na rua", true),
+
     ]
   }
 
   listAll(): Task[] {
     return this.taskService.listAll();
   }
-
 }

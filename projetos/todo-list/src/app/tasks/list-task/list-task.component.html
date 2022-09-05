@@ -13,15 +13,15 @@
             </th>
         </tr>
         <tr *ngFor="let task of tasks">
-            <td [class.success]="!task.done">
+            <td [class.success]="task.done">
                 {{task.name}}
             </td>
-            <td style="width: 70px" class="text-center" [class.success]="!task.done">
+            <td style="width: 70px" class="text-center" [class.success]="task.done">
                 <input type="checkbox"
                 [value]="task.id"
-                [checked]="!task.done">
+                [checked]="task.done">
             </td>
-            <td class="text-center justify-content-around" style="width: 200px" [class.success]="!task.done">
+            <td class="text-center justify-content-around" style="width: 200px" [class.success]="task.done">
                 <a title="Editar" alt="Editar" class="btn btn-xs btn-info">
                     <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Edit
                 </a>                

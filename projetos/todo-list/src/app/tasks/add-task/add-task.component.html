@@ -1,4 +1,4 @@
-<h1>Make a Promise</h1>
+<h1>Make a Goal</h1>
 
 <div class="well">
     <form #formTask="ngForm">
@@ -7,14 +7,15 @@
             <input 
             type="text" 
             class="form-control" 
-            id="nome" 
-            name="nome"
+            id="name" 
+            name="name"
             minlength="5" 
-            required
             [(ngModel)]="task.name"
-            #nome
-            >
-            <div class="alert alert-danger">
+            #name="ngModel"
+            required>
+
+            <div *ngIf="name.errors && (name.dirty || name.touched)"            
+            class="alert alert-danger">
                 <div>
                     Write here, some task.
                 </div>
@@ -24,8 +25,11 @@
             </div>
         </div>
         <div class="form-group text-center">
-            <input type="submit" class="btn btn-success" value="Submit" >
-            <a class="btn btn-default" [routerLink]="['/tasks/list-task']">
+            <input [disabled]="!formTask.form.valid" 
+            type="submit" class="btn btn-success" value="Submit" >
+
+            <a [routerLink="['/tasks']"
+            class="btn btn-default" [routerLink]="['/tasks/list-task']">
                 <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Back
             </a>
         </div>
