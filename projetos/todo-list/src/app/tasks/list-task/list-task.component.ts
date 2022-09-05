@@ -15,9 +15,6 @@ export class ListTaskComponent implements OnInit {
 
   ngOnInit(): void {
     this.tasks = this.listAll();
-    this.tasks = [
-
-    ]
   }
 
   listAll(): Task[] {

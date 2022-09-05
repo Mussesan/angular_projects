@@ -3,33 +3,37 @@
 <div class="well">
     <form #formTask="ngForm">
         <div class="form-group">
-            <label for="nome">Description:</label>
+            <label for="name">Description:</label>
+
             <input 
             type="text" 
             class="form-control" 
             id="name" 
             name="name"
-            minlength="5" 
             [(ngModel)]="task.name"
             #name="ngModel"
+            minlength="5"
             required>
 
             <div *ngIf="name.errors && (name.dirty || name.touched)"            
             class="alert alert-danger">
+
                 <div>
                     Write here, some task.
                 </div>
+
                 <div>
                     The task must have a minimum 5 words.
                 </div>
+
             </div>
         </div>
         <div class="form-group text-center">
             <input [disabled]="!formTask.form.valid" 
-            type="submit" class="btn btn-success" value="Submit" >
+            type="submit" class="btn btn-success" 
+            (click)="add()" value="Submit" >
 
-            <a [routerLink="['/tasks']"
-            class="btn btn-default" [routerLink]="['/tasks/list-task']">
+            <a [routerLink="['/tasks']" class="btn btn-default">
                 <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> Back
             </a>
         </div>

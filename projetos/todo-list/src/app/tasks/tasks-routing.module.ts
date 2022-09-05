@@ -15,9 +15,5 @@ export const TaskRoutes: Routes = [
     {
         path:'tasks/add-task',
         component: AddTaskComponent
-    },
-    {
-        path:'add-task',
-        component: AddTaskComponent
     }
 ];
