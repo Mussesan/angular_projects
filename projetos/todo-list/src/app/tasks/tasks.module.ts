@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { TaskService } from './shared';
 import { ListTaskComponent } from './list-task';
 import { AddTaskComponent } from './add-task';
+import { EditTaskComponent } from './edit-task/edit-task.component';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import { AddTaskComponent } from './add-task';
   declarations: [
     ListTaskComponent,
     AddTaskComponent,
+    EditTaskComponent,
   ],
   providers: [TaskService]
 })
