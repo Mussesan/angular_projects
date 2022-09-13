@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { firstValueFrom } from 'rxjs';
 
 import { TaskService, Task } from '../shared';
 
@@ -20,4 +21,33 @@ export class ListTaskComponent implements OnInit {
   listAll(): Task[] {
     return this.taskService.listAll();
   }
+
+  deleteTask($event: any, task: Task):void {
+    $event.preventDefault();
+    if(confirm('The Task will be deleted, confirm?'))
+    this.taskService.deleteTask(task.id);
+    this.tasks = this.taskService.listAll();  
+  }
+
+  completeTask($event: any, task: Task):void {
+    if(!task.done) {
+      task.done = true;
+    } else {
+      task.done = false;
+    }
+  }
+
+  changeStatus(task: Task):void {
+    if(task.done == false){
+      confirm('The Task will be COMPLETED, confirm?')
+      task.done = true
+    } else {
+      confirm('The Task will be OPEN, confirm?')
+      task.done = false;
+    }
+    this.taskService.changeStatus(task.id);
+    this.tasks = this.listAll();  
+  }
+
+
 }
