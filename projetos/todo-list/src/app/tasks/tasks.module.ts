@@ -7,6 +7,7 @@ import { TaskService } from './shared';
 import { ListTaskComponent } from './list-task';
 import { AddTaskComponent } from './add-task';
 import { EditTaskComponent } from './edit-task/edit-task.component';
+import { DoneTaskDirective } from './shared/done-task.directive';
 
 @NgModule({
   imports: [
@@ -18,6 +19,7 @@ import { EditTaskComponent } from './edit-task/edit-task.component';
     ListTaskComponent,
     AddTaskComponent,
     EditTaskComponent,
+    DoneTaskDirective,
   ],
   providers: [TaskService]
 })
